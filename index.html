@@ -211,50 +211,6 @@ font-size:.8rem;
 opacity:.7;
 }
 
-/* MICRO WIDGET */
-
-.micro-study{
-position:fixed;
-bottom:15px;
-left:50%;
-transform:translateX(-50%);
-width:90%;
-max-width:320px;
-background:#1F3A8A;
-color:#fff;
-border-radius:18px;
-box-shadow:0 15px 35px rgba(0,0,0,.3);
-overflow:hidden;
-z-index:1500;
-opacity:0;
-transition:.4s ease;
-}
-
-.micro-study.show{
-opacity:1;
-}
-
-.micro-header{
-padding:12px;
-font-size:.9rem;
-text-align:center;
-font-weight:600;
-cursor:pointer;
-}
-
-.micro-content{
-max-height:0;
-overflow:hidden;
-padding:0 15px;
-transition:.4s ease;
-font-size:.85rem;
-}
-
-.micro-study.active .micro-content{
-max-height:500px;
-padding:15px;
-}
-
 /* DESKTOP ENHANCEMENTS */
 
 @media(min-width:900px){
@@ -289,13 +245,6 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 text-align:left;
-}
-
-.micro-study{
-left:auto;
-right:20px;
-transform:none;
-width:200px;
 }
 
 }
@@ -345,8 +294,10 @@ Modern, high-converting websites with integrated booking systems built specifica
 <iframe class="airtable-embed"
 src="https://airtable.com/embed/appSpMbUYZb0KpF3u/pagWmf4SdPtp3q275/form"
 frameborder="0"
-loading="lazy"
-allowfullscreen>
+onmousewheel=""
+width="100%"
+height="533"
+style="background: transparent; border: 1px solid #ccc;">
 </iframe>
 </div>
 </div>
@@ -383,15 +334,6 @@ window.scrollY>50?navbar.classList.add("shrink"):navbar.classList.remove("shrink
 });
 
 document.getElementById("year").textContent=new Date().getFullYear();
-
-const micro=document.getElementById("microStudy");
-if(micro){
-micro.querySelector(".micro-header").addEventListener("click",(e)=>{
-e.stopPropagation();
-micro.classList.toggle("active");
-});
-document.addEventListener("click",()=>micro.classList.remove("active"));
-}
 </script>
 
 </body>
