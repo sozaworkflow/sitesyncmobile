@@ -99,13 +99,12 @@ text-decoration:none;
 /* ================= NAV ================= */
 
 .top-bar{
-background:#fff;
-padding:14px 0;
+background:var(--dark);
+padding:16px 0;
 position:fixed;
 width:100%;
 top:0;
 z-index:1000;
-border-bottom:1px solid rgba(0,0,0,.05);
 transition:.3s ease;
 }
 
@@ -113,72 +112,65 @@ transition:.3s ease;
 display:flex;
 justify-content:space-between;
 align-items:center;
+color:#fff;
 }
 
 .nav-right{
 display:flex;
 align-items:center;
-gap:10px;
+gap:15px;
 }
 
 .nav-book{
-background:var(--primary);
+background:var(--accent);
 color:#fff;
-padding:8px 16px;
+padding:10px 18px;
 border-radius:30px;
 font-size:.85rem;
 font-weight:600;
 text-decoration:none;
 }
 
-.top-bar.shrink{
-box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
-
 /* ================= HERO ================= */
 
 .hero{
-padding:110px 0 60px;
-background:#fff;
+padding:140px 0 80px;
 }
 
 .hero-grid{
 display:flex;
 flex-direction:column;
-gap:35px;
+gap:40px;
 }
 
 .hero h1{
-font-size:1.8rem;
-line-height:1.3;
+font-size:2rem;
 font-weight:800;
+line-height:1.2;
 }
 
 .hero p{
-font-size:.95rem;
 color:var(--muted);
-margin-top:10px;
+margin-top:15px;
 }
 
 .btn{
-display:block;
-width:100%;
-text-align:center;
+display:inline-block;
+margin-top:20px;
 background:var(--primary);
 color:#fff;
-padding:14px;
+padding:14px 32px;
 border-radius:50px;
 font-weight:600;
 text-decoration:none;
-margin-top:18px;
 }
 
 /* BLUE FEATURE BLOCK */
 
 .hero-side{
 background:linear-gradient(135deg,#1F3A8A,#3B82F6);
-border-radius:18px;
-padding:25px;
+border-radius:20px;
+padding:30px;
 color:#fff;
 }
 
@@ -187,47 +179,42 @@ list-style:none;
 }
 
 .hero-side li{
-margin-bottom:10px;
-font-size:.9rem;
+margin-bottom:12px;
 }
 
-/* ================= FORM SECTION ================= */
+/* ================= WHAT WE PROVIDE ================= */
 
 .section{
-padding:65px 0;
+padding:80px 0;
 }
 
 .section-title{
-font-size:1.4rem;
-text-align:center;
-margin-bottom:20px;
-font-weight:700;
+font-size:1.8rem;
+margin-bottom:40px;
 }
 
-/* NEW EXTRA NOTE LAYER */
+.card-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+}
 
-.form-note{
+.card{
 background:#fff;
 padding:25px;
-border-radius:16px;
-box-shadow:0 10px 30px rgba(0,0,0,.05);
-margin-bottom:25px;
-text-align:center;
+border-radius:20px;
+box-shadow:0 10px 35px rgba(0,0,0,.06);
 }
 
-.form-note h3{
-font-size:1.1rem;
+.card h4{
 margin-bottom:10px;
 }
 
-.form-note p{
-font-size:.9rem;
-color:var(--muted);
-}
+/* ================= FORM ================= */
 
 .form-wrapper{
 background:#fff;
-padding:22px;
+padding:25px;
 border-radius:20px;
 box-shadow:0 20px 45px rgba(0,0,0,.08);
 }
@@ -244,40 +231,43 @@ border-radius:16px;
 .footer{
 background:var(--dark);
 color:#ddd;
-padding:50px 0 25px;
+padding:60px 0 30px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+margin-bottom:30px;
+}
+
+.footer h4{
+color:#fff;
+margin-bottom:10px;
+}
+
+.footer a{
+color:#3B82F6;
+text-decoration:none;
 }
 
 .footer-bottom{
+border-top:1px solid rgba(255,255,255,.1);
+padding-top:20px;
 text-align:center;
-font-size:.8rem;
+font-size:.85rem;
 opacity:.7;
 }
 
-/* ================= DESKTOP ================= */
-
 @media(min-width:900px){
-
-.hero{
-padding:160px 0 100px;
-}
-
 .hero-grid{
 display:grid;
 grid-template-columns:1.1fr 1fr;
-gap:50px;
 align-items:center;
 }
-
 .hero h1{
 font-size:3rem;
 }
-
-.btn{
-display:inline-block;
-width:auto;
-padding:14px 36px;
-}
-
 }
 </style>
 </head>
@@ -288,32 +278,30 @@ padding:14px 36px;
 <div class="promo-overlay" id="promoOverlay">
 <div class="promo-box">
 <img src="logo.png" alt="SiteSync Logo">
-<h3>Ready to Get More Leads?</h3>
-<p>
-See how a premium website with integrated booking can increase your inbound requests and modernize your business.
-</p>
+<h3>Ready to Capture More Leads?</h3>
+<p>See how a premium website with integrated booking can modernize your business and increase inbound service requests.</p>
 <a href="#request-service" class="promo-btn" id="promoBtn">Request a Demo</a>
 </div>
 </div>
 
+<!-- NAV -->
 <div class="top-bar">
 <div class="container brand">
 <div style="font-weight:800;">SITESYNC</div>
 <div class="nav-right">
-<a href="tel:9109901576" style="font-weight:600;color:#1F3A8A;text-decoration:none;">(910) 990-1576</a>
-<a href="#request-service" class="nav-book">Book Demo</a>
+<a href="tel:9109901576" style="color:#3B82F6;text-decoration:none;font-weight:600;">(910) 990-1576</a>
+<a href="#request-service" class="nav-book">Book a Demo</a>
 </div>
 </div>
 </div>
 
+<!-- HERO -->
 <section class="hero">
 <div class="container hero-grid">
 
 <div>
 <h1>Premium Websites Built for Contractors & Local Service Businesses</h1>
-<p>
-Modern, high-converting websites with integrated booking systems built specifically for blue-collar businesses.
-</p>
+<p>Modern, high-converting websites with integrated booking systems built specifically for blue-collar businesses.</p>
 <a href="tel:9109901576" class="btn">Call Now</a>
 </div>
 
@@ -321,7 +309,7 @@ Modern, high-converting websites with integrated booking systems built specifica
 <ul>
 <li>⚙ Built for Blue-Collar Businesses</li>
 <li>📩 Booking Requests Sent Directly to Email</li>
-<li>🌐 Fast Modern One-Page Websites</li>
+<li>🚀 Fast Modern One-Page Websites</li>
 <li>🔵 Clean Grey • White • Blue Design</li>
 </ul>
 </div>
@@ -329,18 +317,35 @@ Modern, high-converting websites with integrated booking systems built specifica
 </div>
 </section>
 
+<!-- WHAT WE PROVIDE -->
+<section class="section">
+<div class="container">
+<h2 class="section-title">What We Provide</h2>
+<div class="card-grid">
+<div class="card">
+<h4>Modern Landing Pages</h4>
+<p>Clean, premium-feeling websites that build instant trust.</p>
+</div>
+<div class="card">
+<h4>Integrated Booking Systems</h4>
+<p>Customer requests delivered directly to your email through Airtable automation.</p>
+</div>
+<div class="card">
+<h4>Fast Deployment</h4>
+<p>Live quickly with professional hosting and performance optimization.</p>
+</div>
+<div class="card">
+<h4>Built for Trades</h4>
+<p>Designed for HVAC, plumbing, electrical, landscaping, and service businesses.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FORM -->
 <section class="section" id="request-service">
 <div class="container">
-
 <h2 class="section-title">Book a Demo</h2>
-
-<div class="form-note">
-<h3>What Happens After You Submit?</h3>
-<p>
-We’ll review your business, walk you through the system, and show you exactly how your website will capture and organize new service requests automatically.
-</p>
-</div>
-
 <div class="form-wrapper">
 <iframe class="airtable-embed"
 src="https://airtable.com/embed/appSpMbUYZb0KpF3u/pagWmf4SdPtp3q275/form"
@@ -349,15 +354,42 @@ loading="lazy"
 allowfullscreen>
 </iframe>
 </div>
-
 </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
 <div class="container">
-<div class="footer-bottom">
-© <span id="year"></span> SiteSync
+
+<div class="footer-grid">
+<div>
+<h4>SiteSync</h4>
+<p>Premium web systems for contractors and local service businesses.</p>
 </div>
+<div>
+<h4>Contact</h4>
+<p><a href="tel:9109901576">(910) 990-1576</a></p>
+<p>North Carolina & Remote</p>
+</div>
+<div>
+<h4>Services</h4>
+<p>Website Design</p>
+<p>Booking Automation</p>
+<p>Hosting & Deployment</p>
+</div>
+<div>
+<h4>Built For</h4>
+<p>HVAC</p>
+<p>Plumbing</p>
+<p>Electrical</p>
+<p>Landscaping</p>
+</div>
+</div>
+
+<div class="footer-bottom">
+© <span id="year"></span> SiteSync • Premium at an Accessible Rate
+</div>
+
 </div>
 </footer>
 
@@ -378,11 +410,6 @@ if(e.target===overlay){
 overlay.classList.add("hidden");
 }
 });
-</script>
-
-</body>
-</html>
-
 </script>
 
 </body>
