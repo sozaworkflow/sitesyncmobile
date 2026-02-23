@@ -35,7 +35,7 @@ max-width:1100px;
 margin:auto;
 }
 
-/* ================= STICKY PROMO MODAL ================= */
+/* PROMO MODAL */
 
 .promo-overlay{
 position:fixed;
@@ -97,7 +97,7 @@ font-weight:600;
 text-decoration:none;
 }
 
-/* ================= NAV ================= */
+/* NAV */
 
 .top-bar{
 background:#fff;
@@ -264,7 +264,7 @@ text-align:left;
 <p>
 Get a premium, high-converting website with an integrated booking system built specifically for service businesses. Start attracting more leads now.
 </p>
-<a href="#request-service" class="promo-btn">Request a Demo</a>
+<a href="#request-service" class="promo-btn" id="promoBtn">Request a Demo</a>
 </div>
 </div>
 
@@ -287,14 +287,6 @@ Modern, high-converting websites with integrated booking systems built specifica
 </p>
 <a href="tel:9109901576" class="btn">Call Now</a>
 </div>
-<div style="background:linear-gradient(135deg,#1F3A8A,#3B82F6);border-radius:18px;padding:25px;color:#fff;">
-<ul style="list-style:none;">
-<li>⚙ Built for Blue-Collar Businesses</li>
-<li>📩 Booking Requests Sent Directly to Email</li>
-<li>🌐 Fast Modern One-Page Websites</li>
-<li>🔵 Clean Grey • White • Blue Design</li>
-</ul>
-</div>
 </div>
 </section>
 
@@ -316,24 +308,8 @@ style="background: transparent; border: 1px solid #ccc;">
 
 <footer class="footer">
 <div class="container">
-<div class="footer-grid">
-<div>
-<h4>SiteSync</h4>
-<p>Web Design for Blue-Collar Businesses</p>
-</div>
-<div>
-<h4>Contact</h4>
-<a href="tel:9109901576">(910) 990-1576</a>
-<p>Serving North Carolina & Beyond</p>
-</div>
-<div>
-<h4>Built For</h4>
-<p>HVAC • Plumbing • Electrical • Landscaping</p>
-</div>
-</div>
 <div class="footer-bottom">
 <div>© <span id="year"></span> SiteSync</div>
-<div>Premium at an Accessible Rate</div>
 </div>
 </div>
 </footer>
@@ -347,11 +323,24 @@ window.scrollY>50?navbar.classList.add("shrink"):navbar.classList.remove("shrink
 document.getElementById("year").textContent=new Date().getFullYear();
 
 const overlay=document.getElementById("promoOverlay");
+const promoBtn=document.getElementById("promoBtn");
+
+promoBtn.addEventListener("click",(e)=>{
+e.preventDefault();
+overlay.classList.add("hidden");
+document.getElementById("request-service").scrollIntoView({behavior:"smooth"});
+});
+
 overlay.addEventListener("click",(e)=>{
 if(e.target===overlay){
 overlay.classList.add("hidden");
 }
 });
+</script>
+
+</body>
+</html>
+
 </script>
 
 </body>
