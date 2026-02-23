@@ -18,7 +18,6 @@
 --light:#F8FAFC;
 --accent:#3B82F6;
 --muted:#64748B;
---card:#FFFFFF;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -122,9 +121,11 @@ padding:25px;
 color:#fff;
 }
 
-.hero-side img{
-width:80px;
-margin-bottom:15px;
+.hero-logo{
+width:140px;
+max-width:100%;
+margin-bottom:20px;
+filter:drop-shadow(0 8px 18px rgba(0,0,0,.25));
 }
 
 .hero-side ul{
@@ -166,15 +167,16 @@ box-shadow:0 10px 30px rgba(0,0,0,.05);
 
 .form-wrapper{
 background:#fff;
-padding:18px;
-border-radius:16px;
-box-shadow:0 15px 35px rgba(0,0,0,.06);
+padding:22px;
+border-radius:20px;
+box-shadow:0 20px 45px rgba(0,0,0,.08);
 }
 
 .form-wrapper iframe{
 width:100%;
-height:480px;
+min-height:750px;
 border:none;
+border-radius:16px;
 }
 
 /* FOOTER */
@@ -324,7 +326,7 @@ Modern, high-converting websites with integrated booking systems built specifica
 </div>
 
 <div class="hero-side">
-<img src="logo.png" alt="SiteSync Logo">
+<img src="logo.png" alt="SiteSync Logo" class="hero-logo">
 <ul>
 <li>⚙ Built for Blue-Collar Businesses</li>
 <li>📩 Booking Requests Sent Directly to Email</li>
@@ -336,23 +338,16 @@ Modern, high-converting websites with integrated booking systems built specifica
 </div>
 </section>
 
-<section class="section">
-<div class="container">
-<h2 class="section-title">What We Provide</h2>
-<div class="card-grid">
-<div class="card"><h3>Modern Landing Pages</h3><p>Clean, premium-feeling websites that build instant trust.</p></div>
-<div class="card"><h3>Integrated Booking Systems</h3><p>Customer requests delivered directly to your email.</p></div>
-<div class="card"><h3>Fast Deployment</h3><p>Professional hosting and optimized performance.</p></div>
-<div class="card"><h3>Built for Trades</h3><p>HVAC • Plumbing • Electrical • Landscaping • Contractors</p></div>
-</div>
-</div>
-</section>
-
 <section class="section" id="request-service">
 <div class="container">
 <h2 class="section-title">Book a Demo</h2>
 <div class="form-wrapper">
-<iframe src="PASTE_YOUR_AIRTABLE_EMBED_LINK_HERE"></iframe>
+<iframe class="airtable-embed"
+src="https://airtable.com/embed/appSpMbUYZb0KpF3u/pagWmf4SdPtp3q275/form"
+frameborder="0"
+loading="lazy"
+allowfullscreen>
+</iframe>
 </div>
 </div>
 </section>
@@ -381,18 +376,6 @@ Modern, high-converting websites with integrated booking systems built specifica
 </div>
 </footer>
 
-<div class="micro-study" id="microStudy">
-<div class="micro-header">See Real Results</div>
-<div class="micro-content">
-<h4>The Problem</h4>
-<p>Local contractor had no website and missed after-hours leads.</p>
-<h4>What We Built</h4>
-<p>Modern landing page with integrated booking system.</p>
-<h4>The Result</h4>
-<p>Inbound booking requests and stronger credibility.</p>
-</div>
-</div>
-
 <script>
 const navbar=document.querySelector(".top-bar");
 window.addEventListener("scroll",()=>{
@@ -402,18 +385,13 @@ window.scrollY>50?navbar.classList.add("shrink"):navbar.classList.remove("shrink
 document.getElementById("year").textContent=new Date().getFullYear();
 
 const micro=document.getElementById("microStudy");
+if(micro){
 micro.querySelector(".micro-header").addEventListener("click",(e)=>{
 e.stopPropagation();
 micro.classList.toggle("active");
 });
 document.addEventListener("click",()=>micro.classList.remove("active"));
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){micro.classList.add("show");}
-});
-},{threshold:.3});
-observer.observe(document.querySelector(".section"));
+}
 </script>
 
 </body>
